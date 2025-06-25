@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tahn.minipokedex.ui.view.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showBackIcon="true"
+        app:toolbarTitle="@string/user_details" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <View
+                android:id="@+id/viewAvatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_user_avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:layout_constraintBottom_toBottomOf="@id/viewAvatar"
+                app:layout_constraintEnd_toEndOf="@id/viewAvatar"
+                app:layout_constraintStart_toStartOf="@id/viewAvatar"
+                app:layout_constraintTop_toTopOf="@id/viewAvatar"
+                app:shapeAppearanceOverlay="@style/ImageRounded35"
+                tools:src="@mipmap/ic_launcher" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewAvatar"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="David" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="@id/tvUsername"
+                app:layout_constraintStart_toStartOf="@id/tvUsername"
+                app:layout_constraintTop_toBottomOf="@id/tvUsername" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@id/tvUsername"
+                app:layout_constraintStart_toEndOf="@id/ivLocation"
+                app:layout_constraintTop_toTopOf="@id/ivLocation"
+                tools:text="Việt Nam" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="10dp"
+                app:tint="@color/colorTextSecondary"
+                app:layout_constraintEnd_toStartOf="@id/tvUserLocation"
+                app:layout_constraintStart_toStartOf="@id/tvUsername"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                app:srcCompat="@drawable/ic_location" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tvUserLocation,ivLocation" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutFollower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/layoutFollowing"
+        app:layout_constraintStart_toStartOf="@id/cardInfo"
+        app:layout_constraintTop_toBottomOf="@id/cardInfo">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_follower_rounded" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/colorTextPrimary"
+            tools:text="100+" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollowerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/colorTextPrimary"
+            tools:text="Follower" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutFollowing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/cardInfo"
+        app:layout_constraintStart_toEndOf="@id/layoutFollower"
+        app:layout_constraintTop_toTopOf="@id/layoutFollower">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_following_rounded" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/colorTextPrimary"
+            tools:text="10" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollowingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/colorTextPrimary"
+            tools:text="Following" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBlog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blog"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/cardInfo"
+        app:layout_constraintTop_toBottomOf="@id/layoutFollower" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserLink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoLink="all"
+        android:textColorLink="@color/colorTextLink"
+        app:layout_constraintStart_toStartOf="@id/cardInfo"
+        app:layout_constraintTop_toBottomOf="@id/tvBlog"
+        tools:text="https://linkedin.com" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppToolbar">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="showRightIcon" format="boolean" />
+        <attr name="showBackIcon" format="boolean" />
+        <attr name="rightSrc" format="reference" />
+    </declare-styleable>
+
+</resources>

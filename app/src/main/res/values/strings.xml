@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Github Users</string>
+    <string name="text_permission_required">Permission Required</string>
+    <string name="text_ok">OK!</string>
+    <string name="yes_sure">Yes, sure!</string>
+    <string name="no_thanks">No Thanks</string>
+    <string name="error">Error</string>
+    <string name="something_went_wrong">Something went wrong.\nPlease try again!</string>
+    <string name="user_details">User Details</string>
+    <string name="blog">Blog</string>
+    <string name="over_100">100+</string>
+    <string name="followers">followers</string>
+    <string name="follower">follower</string>
+    <string name="followings">followings</string>
+    <string name="following">following</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3700B3</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#E4E4E4</color>
+    <color name="colorTextLink">#42A5F5</color>
+    <color name="colorBackground">#121212</color>
+    <color name="colorCardBackground">#1E1E1E</color>
+    <color name="colorDivider">#E0E0E0</color>
+    <color name="colorBackgroundImage">#E0E0E0</color>
+</resources>

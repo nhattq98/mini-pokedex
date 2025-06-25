@@ -1,0 +1,74 @@
+[versions]
+agp = "8.9.2"
+coreTesting = "2.2.0"
+kotlin = "2.0.21"
+coreKtx = "1.16.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+okhttp = "4.12.0"
+retrofit = "2.11.0"
+room = "2.7.1"
+paging = "3.3.6"
+gson = "2.13.1"
+glide = "4.16.0"
+koin = "4.0.0"
+navigationUiKtx = "2.8.9"
+ksp = "2.0.21-1.0.27"
+securityCrypto = "1.0.0"
+sqlCypher = "4.5.3"
+sqlite = "2.1.0"
+timber = "5.0.1"
+swipeRefreshLayout = "1.2.0-alpha01"
+mockk = "1.13.5"
+coroutinesTest = "1.7.3"
+androidCoreTest = "1.6.1"
+robolectric = "4.14.1"
+kover = "0.9.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test = { group = "androidx.test", name = "core-ktx", version.ref = "androidCoreTest" }
+androidx-junit = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+okhttp-mockwebserver = { group = "com.squareup.okhttp3",name = "mockwebserver", version.ref = "okhttp" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+koin = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-android-compat = { group = "io.insert-koin", name = "koin-android-compat", version.ref = "koin" }
+navigation = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationUiKtx" }
+securityCrypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
+sqlCypher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sqlCypher" }
+sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "sqlite" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+swipeRefreshLayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeRefreshLayout" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "paging" }
+paging-test = { group = "androidx.paging", name = "paging-testing", version.ref = "paging" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
