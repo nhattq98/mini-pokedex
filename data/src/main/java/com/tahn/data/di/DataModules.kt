@@ -38,7 +38,7 @@ internal val localModule =
     module {
         singleOf(AppDatabase::getInstance)
         single<AppPreferences> {
-            AppPreferencesImpl(androidContext(), get(), get())
+            AppPreferencesImpl(androidContext(), get())
         }
     }
 
