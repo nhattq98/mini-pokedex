@@ -1,4 +1,4 @@
-# MiniPokedex 🧩
+# MiniPokedex 
 
 A modern Android application to explore Pokémon, built with **Clean Architecture**, **Jetpack Paging 3**, and an **offline-first approach**. This project demonstrates up-to-date practices in architecture, testing, and modularization.
 
@@ -28,7 +28,7 @@ A modern Android application to explore Pokémon, built with **Clean Architectur
 
 ---
 
-## 🧭 Architecture Overview
+## Architecture Overview
 
 This project follows the principles of **Clean Architecture** with clearly separated modules:
 
