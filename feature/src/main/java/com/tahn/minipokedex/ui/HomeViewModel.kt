@@ -1,4 +1,4 @@
-package com.tahn.minipokedex.ui.feature
+package com.tahn.minipokedex.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,7 +9,7 @@ import com.tahn.domain.usecase.GetPokemonPagingSourceUseCase
 import kotlinx.coroutines.flow.Flow
 
 class HomeViewModel(
-    private val getPagedPokemonUseCase: GetPokemonPagingSourceUseCase,
+    getPagedPokemonUseCase: GetPokemonPagingSourceUseCase,
 ) : ViewModel() {
     val pokemonFlow: Flow<PagingData<Pokemon>> =
         getPagedPokemonUseCase().cachedIn(viewModelScope)

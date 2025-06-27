@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github Users</string>
+    <string name="app_name">MiniPokedex</string>
     <string name="text_permission_required">Permission Required</string>
     <string name="text_ok">OK!</string>
     <string name="yes_sure">Yes, sure!</string>

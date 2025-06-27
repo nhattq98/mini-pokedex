@@ -1,10 +1,10 @@
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kover)
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jmailen.kotlinter")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -77,14 +77,7 @@ android {
                         "*.AndroidKeyStoreProvider",
                         "*.DispatcherProviderImpl",
                     )
-                    packages(
-                        "com.tahn.githubusers.databinding",
-                        "com.tahn.githubusers.ui.utils",
-                        "com.tahn.githubusers.ui.base",
-                        "com.tahn.githubusers.ui.dialog",
-                        "com.tahn.githubusers.ui.view",
-                        "com.tahn.githubusers.ui.feature.*.adapter",
-                    )
+                    // packages( )
                 }
             }
         }
@@ -92,32 +85,25 @@ android {
 }
 
 dependencies {
-    kover(project(":domain"))
-    kover(project(":data"))
-
-    implementation(project(":data"))
+    implementation(project(":feature"))
     implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.koin.androidx.compose)
 
     // Logger
     implementation(libs.timber)
 
     // DI
-    implementation(libs.koin)
-    implementation(libs.koin.android)
-    implementation(libs.koin.android.compat)
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation)
+    val koin_version = "3.5.0"
+    implementation("io.insert-koin:koin-core:$koin_version")
+    implementation("io.insert-koin:koin-android:$koin_version")
+    implementation("io.insert-koin:koin-androidx-compose:$koin_version")
+    implementation("io.insert-koin:koin-androidx-compose-navigation:$koin_version")
 
-    // Image
-    implementation(libs.glide)
-
-    // SwipeToRefresh
-    implementation(libs.swipeRefreshLayout)
-
+    // Testing
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)
@@ -126,17 +112,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Compose UI
-    implementation("androidx.compose.ui:ui:1.6.0")
-    implementation("androidx.compose.material:material:1.6.0")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
-    implementation("androidx.activity:activity-compose:1.9.0")
+//    implementation(libs.androidx.ui)
+//    implementation(libs.androidx.material)
+//    implementation(libs.androidx.ui.tooling.preview)
+//    implementation(libs.androidx.activity.compose)
 
-    // Coil for images (optional)
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    // Jetpack navigation
+    implementation(libs.navigation)
+    implementation(libs.androidx.navigation.compose)
+    androidTestImplementation(libs.androidx.navigation.testing)
 
-    // Jetpack Paging 3
-    implementation("androidx.paging:paging-runtime:3.2.1")
-
-    // Jetpack Paging Compose
-    implementation("androidx.paging:paging-compose:3.2.1") // <-- this is required
+    implementation(libs.kotlinx.serialization.json)
 }
